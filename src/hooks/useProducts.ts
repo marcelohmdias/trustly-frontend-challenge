@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 
+import { Product } from '@/store/state'
 import { Context, ContextStore } from '@/store/Store'
 
 export function useProduct() {
@@ -7,13 +8,29 @@ export function useProduct() {
 
   const { products } = state
 
-  useEffect(() => {
-    ;(async (): Promise<void> => {
+  function matchProducts(str: string) {
+    dispatch({ type: 'FILTER_PRODUCTS', payload: str })
+  }
+
+  async function findProducts() {
+    try {
       const data = await fetch('/api/product').then((data) => data.json())
 
-      dispatch({ type: 'LOAD_PRODUCTS', payload: data.results })
-    })()
-  })
+      const payload = (data as Product[])?.map((item) => {
+        item.visible = true
+        return item
+      })
 
-  return { products }
+      dispatch({ type: 'LOAD_PRODUCTS', payload })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    findProducts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return { products, matchProducts }
 }
