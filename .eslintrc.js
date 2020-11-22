@@ -41,7 +41,7 @@ module.exports = {
           order: 'asc',
           ignoreCase: true
         },
-        groups: ['module', ['parent', 'sibling', 'index']],
+        groups: ['module', '/^@/', ['parent', 'sibling', 'index']],
         newlinesBetween: 'always'
       }
     ],
