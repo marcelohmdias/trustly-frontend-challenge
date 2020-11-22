@@ -1,7 +1,8 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import GlobalStyles from './../styles/global'
+import Store from '@/store/Store'
+import GlobalStyles from '@/styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -34,7 +35,7 @@ function App({ Component, pageProps }: AppProps) {
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
         <meta
@@ -43,7 +44,10 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+
+      <Store>
+        <Component {...pageProps} />
+      </Store>
     </>
   )
 }
