@@ -1,7 +1,10 @@
+import HomeTemplate from '@/components/templates/Home/HomeTemplate'
+import Store from '@/store/Store'
+
 export default function Home() {
   return (
-    <>
-      <main>Hello big W</main>
-    </>
+    <Store>
+      <HomeTemplate />
+    </Store>
   )
 }
