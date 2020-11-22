@@ -9,9 +9,12 @@ export default async function (
   _: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const data = await fetch(url)
+  try {
+    const { results } = await fetch(url).then((data) => data.json())
 
-  const products: Product[] = await data.json()
-
-  res.status(200).json(products)
+    res.status(200).json(results as Product[])
+  } catch (err) {
+    console.log(err)
+    res.status(200).json([])
+  }
 }
