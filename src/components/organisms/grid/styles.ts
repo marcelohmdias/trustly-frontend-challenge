@@ -13,6 +13,7 @@ export const Container = styled.div`
 
 export const Header = styled.header`
   grid-area: Header;
+  max-width: 100vw;
 
   @media (max-width: 768px) {
     background-color: #fff;
@@ -26,4 +27,19 @@ export const Header = styled.header`
 export const Main = styled.main`
   background-color: #fff;
   grid-area: Body;
+  margin: 3em auto 0;
+  max-width: 1100px;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    margin-top: 2em;
+  }
+
+  @media (max-width: 425px) {
+    margin-top: 1.5em;
+  }
+
+  @media (max-width: 320px) {
+    margin-top: 1em;
+  }
 `
