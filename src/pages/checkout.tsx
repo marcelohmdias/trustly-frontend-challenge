@@ -12,5 +12,5 @@ Checkout.getInitialProps = ({ res }: NextPageContext) => {
     res.end()
   }
 
-  return {}
+  return { started: true }
 }
