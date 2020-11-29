@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import Store from '@/store/Store'
-import GlobalStyles from '@/styles/global'
+import Store from './../store/Store'
+import GlobalStyles from './../styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -38,9 +38,14 @@ function App({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
+        <script
+          src="//sandbox.paywithmybank.com/start/scripts/pwmb.js?accessId=D61EC9BAF0BB369B9438"
+          type="text/javascript"
+          async
+        />
         <meta
           name="description"
-          content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
+          content="Frontend challenge - PayWithMyBank Integration"
         />
       </Head>
       <GlobalStyles />

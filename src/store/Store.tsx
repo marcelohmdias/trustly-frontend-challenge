@@ -1,7 +1,6 @@
 import { createContext, Dispatch, useReducer } from 'react'
 
-import { WithChildren } from '@/types'
-
+import { JSXProps } from './../types'
 import { reducer, ReducerAction } from './reducer'
 import { initialState, State } from './state'
 
@@ -9,7 +8,7 @@ export type ContextStore = [State, Dispatch<ReducerAction>]
 
 export const Context = createContext<ContextStore>(initialState as any)
 
-function Store({ children }: WithChildren<{}>) {
+function Store({ children }: JSXProps) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
