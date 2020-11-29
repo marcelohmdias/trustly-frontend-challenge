@@ -6,9 +6,13 @@ export const Button = styled.button`
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 0.875em;
+  line-height: 19px;
   outline: none;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
+  padding-bottom: 0.75em;
+  padding-top: 0.75em;
+  text-align: center;
   width: 100%;
 
   &:hover {

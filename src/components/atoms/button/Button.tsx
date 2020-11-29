@@ -1,5 +1,4 @@
-import { WithChildren } from '@/types'
-
+import { JSXProps } from './../../../types'
 import * as S from './styles'
 
 type ButtonProps = {
@@ -11,7 +10,7 @@ export default function Button({
   disabled,
   onClick,
   children
-}: WithChildren<ButtonProps>) {
+}: JSXProps<ButtonProps>) {
   return (
     <S.Button
       disabled={disabled}
