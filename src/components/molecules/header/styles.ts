@@ -9,9 +9,6 @@ export const Wrapper = styled.div`
   max-width: 1300px;
   position: relative;
   width: 100%;
-
-  @media (max-width: 800px) {
-  }
 `
 
 export const AvatarSlot = styled.div`
@@ -24,7 +21,13 @@ export const ButtonSlot = styled.div`
   position: absolute;
 `
 export const TitleSlot = styled.div`
-  @media (max-width: 768px) {
-    display: none;
+  display: none;
+
+  @media (min-width: 769px) {
+    display: inline-block;
+
+    h1 {
+      text-align: center;
+    }
   }
 `
