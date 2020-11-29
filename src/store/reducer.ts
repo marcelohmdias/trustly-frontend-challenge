@@ -12,12 +12,15 @@ export type ReducerAction =
       payload: boolean
     }
   | {
+      type: 'FILTER_PRODUCTS'
+      payload: string
+    }
+  | {
       type: 'LOAD_PRODUCTS'
       payload: Array<Product>
     }
   | {
-      type: 'FILTER_PRODUCTS'
-      payload: string
+      type: 'RESET_CART'
     }
 
 export function reducer(state: State, action: ReducerAction) {
@@ -47,6 +50,11 @@ export function reducer(state: State, action: ReducerAction) {
     case 'LOAD_PRODUCTS':
       return produce(state, (draft) => {
         draft.products = action.payload
+      })
+
+    case 'RESET_CART':
+      return produce(state, (draft) => {
+        draft.cart = undefined
       })
 
     default:
