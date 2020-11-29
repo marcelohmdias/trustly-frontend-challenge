@@ -1,15 +1,14 @@
 import { Component } from 'react'
 
-import { WithChildren } from '@/types'
-
+import { JSXProps } from './../../../types'
 import * as S from './styles'
 
 export default class Grid extends Component {
-  static header({ children }: WithChildren) {
+  static header({ children }: JSXProps) {
     return <S.Header>{children}</S.Header>
   }
 
-  static body({ children }: WithChildren) {
+  static body({ children }: JSXProps) {
     return <S.Main>{children}</S.Main>
   }
 
