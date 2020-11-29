@@ -1,16 +1,15 @@
 import { useRouter } from 'next/dist/client/router'
 import { useState } from 'react'
 
-import Button from '@/components/atoms/button/Button'
-import Loader from '@/components/atoms/loader/Loader'
-import Selector from '@/components/atoms/selector/Selector'
-import { useCart } from '@/hooks/useCart'
-import { Product } from '@/store/state'
-import { WithChildren } from '@/types'
-
+import { JSXProps } from '../../../types'
+import { useCart } from './../../../hooks/useCart'
+import { Product } from './../../../store/state'
+import Button from './../../atoms/button/Button'
+import Loader from './../../atoms/loader/Loader'
+import Selector from './../../atoms/selector/Selector'
 import * as S from './styles'
 
-type ProductGridProps = WithChildren<{
+type ProductGridProps = JSXProps<{
   product: Product
 }>
 

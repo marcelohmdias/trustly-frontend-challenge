@@ -9,7 +9,7 @@ export const Card = styled.li`
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  margin: 0 2em 4.125em;
+  margin: 0 auto 3.5em;
   position: relative;
   transition: display 1s ease;
   width: 18.57em;
@@ -27,16 +27,6 @@ export const Card = styled.li`
       position: initial;
       visibility: visible;
     }
-  }
-
-  @media (max-width: 1024px) {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-
-  @media (max-width: 768px) {
-    margin-left: auto;
-    margin-right: auto;
   }
 `
 
