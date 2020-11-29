@@ -6,4 +6,5 @@ export const Wrapper = styled.ul`
   list-style: none;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 `

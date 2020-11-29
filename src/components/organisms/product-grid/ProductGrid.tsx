@@ -1,14 +1,13 @@
-import ProductCard from '@/components/molecules/product-card/ProductCard'
-import { Product } from '@/store/state'
-import { WithChildren } from '@/types'
-
+import { Product } from './../../../store/state'
+import { JSXProps } from './../../../types'
+import ProductCard from './../../molecules/product-card/ProductCard'
 import * as S from './styles'
 
-type ProductGridProps = WithChildren<{
+type ProductGridProps = {
   products: Array<Product>
-}>
+}
 
-export default function ProductGrid({ products }: ProductGridProps) {
+export default function ProductGrid({ products }: JSXProps<ProductGridProps>) {
   return (
     <S.Wrapper>
       {products?.map((product) => (
