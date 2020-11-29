@@ -1,9 +1,7 @@
-import { useProduct } from '@/hooks/useProducts'
-import { WithChildren } from '@/types'
-
+import { useProduct } from './../../../hooks/useProducts'
 import * as S from './styles'
 
-export default function Seaarch({ children }: WithChildren) {
+export default function Seaarch() {
   const { matchProducts } = useProduct()
 
   function searchHandler(target: HTMLInputElement) {
