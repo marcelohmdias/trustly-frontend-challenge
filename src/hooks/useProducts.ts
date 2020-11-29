@@ -1,10 +1,12 @@
 import { useContext, useEffect } from 'react'
 
-import { Product } from '@/store/state'
-import { Context, ContextStore } from '@/store/Store'
+import { Product } from './../store/state'
+import { Context, ContextStore } from './../store/Store'
+import { useCart } from './useCart'
 
 export function useProduct() {
   const [state, dispatch] = useContext<ContextStore>(Context)
+  const { resetCart } = useCart()
 
   const { products } = state
 
@@ -28,6 +30,7 @@ export function useProduct() {
   }
 
   useEffect(() => {
+    resetCart()
     findProducts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

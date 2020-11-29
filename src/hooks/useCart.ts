@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
-import { Cart } from '@/store/state'
-import { Context, ContextStore } from '@/store/Store'
+import { Cart } from './../store/state'
+import { Context, ContextStore } from './../store/Store'
 
 export function useCart() {
   const [state, dispatch] = useContext<ContextStore>(Context)
@@ -24,6 +24,9 @@ export function useCart() {
       }, 1500)
     })
   }
+  function resetCart() {
+    dispatch({ type: 'RESET_CART' })
+  }
 
-  return { addToCart, cart, cartLoading }
+  return { addToCart, cart, cartLoading, resetCart }
 }
